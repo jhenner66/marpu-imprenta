@@ -161,9 +161,9 @@ button { cursor: pointer; border: none; font-family: inherit; }
 }
 
 .logo-dots img {
-    width: 50px; /* Ajusta este valor (ej. 40px, 60px) según el tamaño que desees */
-    height: auto; /* Mantiene la proporción original para que no se estire */
-    max-height: 50px; /* Evita que la imagen supere el alto de la cabecera */
+    width: 50px;
+    height: auto;
+    max-height: 50px;
     object-fit: contain;
 }
 .logo-text h1 {
@@ -204,7 +204,7 @@ button { cursor: pointer; border: none; font-family: inherit; }
 }
 
 .nav-mobile-container {
-    display: none; /* Oculto por defecto */
+    display: none;
     position: absolute;
     top: 80px;
     left: 0;
@@ -374,16 +374,29 @@ button { cursor: pointer; border: none; font-family: inherit; }
     justify-content: space-between;
     align-items: center;
     margin: 4rem auto;
-    max-width: 1300px; /* Limitamos el ancho para que no se estire. Ajusta el número si lo quieres más angosto. */
-
+    max-width: 1300px;
 }
 .banner-btn { background: var(--c-yellow); color: var(--c-black); }
 
+/* ========================================= */
+/* SECCIÓN COTIZADOR (Con nuevo fondo oscuro)*/
+/* ========================================= */
 .calculator {
-    background-color: var(--bg-section);
-    border-top: 1px solid var(--border-color);
+    background-color: #141a23; /* Tu nuevo color oscuro */
+    border-top: none; /* Quitamos el borde superior para un diseño más limpio */
 }
 
+/* Forzamos el título y subtítulo a blanco/gris claro para que se lean */
+.calculator .section-title {
+    color: #ffffff;
+}
+.calculator p {
+    color: #9ca3af;
+}
+
+/* ========================================= */
+/* CAJA DEL FORMULARIO Y CAMPOS (MODERNO)    */
+/* ========================================= */
 .grid-calculator {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -391,53 +404,97 @@ button { cursor: pointer; border: none; font-family: inherit; }
     align-items: center;
 }
 
+/* Tarjeta del formulario con gradiente sutil y sombra elegante */
 .calc-form {
-    background: white;
-    padding: 2rem;
+    background: linear-gradient(145deg, #1d2532, #141a23);
+    padding: 2.5rem;
     border-radius: 24px;
-    box-shadow: var(--shadow-lg);
-    border-left: 4px solid var(--c-magenta);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
 }
 
-.form-group { margin-bottom: 1.5rem; }
+/* Línea lateral con gradiente CMY en lugar de un solo color */
+.calc-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--c-cyan), var(--c-magenta), var(--c-yellow));
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
 .form-group label {
     display: block;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    color: #d1d5db; /* Un gris muy claro y elegante */
 }
+
+/* Inputs con fondo semi-transparente para dar profundidad */
 .form-group select {
     width: 100%;
-    padding: 1rem;
-    border: 2px solid var(--border-color);
+    padding: 1.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     font-size: 1rem;
-    background: var(--bg-section);
+    background-color: rgba(0, 0, 0, 0.25);
+    color: #ffffff;
     outline: none;
-}
-.form-group select:focus { border-color: var(--c-cyan); }
+    transition: all 0.3s ease;
+    cursor: pointer;
 
-.calc-result {
-    background: var(--c-black);
-    padding: 3rem;
-    border-radius: 24px;
-    text-align: center;
-    color: white;
+    /* Flecha personalizada moderna */
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2306b6d4%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem top 50%;
+    background-size: 0.8rem auto;
 }
-.result-label { color: #9ca3af; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem;}
-.result-price {
-    font-size: 5rem;
-    font-weight: 900;
-    margin: 1rem 0;
-    line-height: 1;
-}
-.result-currency { font-size: 2rem; color: var(--c-cyan); vertical-align: top;}
-.result-note { font-size: 0.8rem; color: #9ca3af; margin-bottom: 2rem;}
 
+.form-group select:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Efecto "Glow" (Halo brillante) al seleccionar una opción */
+.form-group select:focus {
+    border-color: var(--c-cyan);
+    box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.15);
+}
+
+/* ========================================= */
+/* BOTÓN WHATSAPP DEL COTIZADOR (Premium)    */
+/* ========================================= */
+.grid-calculator > button.btn-whatsapp {
+    align-self: center;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    box-shadow: 0 15px 30px rgba(37, 211, 102, 0.25); /* Sombra verde brillante */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-calculator > button.btn-whatsapp:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(37, 211, 102, 0.4);
+}
+/* ========================================= */
+/* FOOTER (DISEÑO MODERNO Y A COLOR)         */
+/* ========================================= */
 .footer {
-    background: white;
+    background-color:#141a23; /* Fondo ligeramente gris para separarlo del contenido */
     padding: 4rem 0 2rem 0;
-    border-top: 1px solid var(--border-color);
+    border-top: 4px solid transparent;
+    border-image: linear-gradient(to right, var(--c-cyan), var(--c-magenta), var(--c-yellow)) 1; /* Línea degradada superior */
 }
 
 .grid-footer {
@@ -447,14 +504,84 @@ button { cursor: pointer; border: none; font-family: inherit; }
     margin-bottom: 3rem;
 }
 
-.footer-title { font-size: 0.9rem; text-transform: uppercase; margin-bottom: 1.5rem; color: var(--c-black);}
-.footer-links li { margin-bottom: 0.75rem; color: var(--text-muted); }
+/* Logo MARPU con gradiente en el footer */
+.footer .logo-container h2 {
+    font-weight: 900;
+    font-size: 2.2rem;
+    background: linear-gradient(to right, var(--c-cyan), var(--c-magenta), var(--c-yellow));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.footer-title {
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.footer-links li {
+    margin-bottom: 1rem;
+    color: #d1d5db;
+    display: flex;
+    align-items: center;
+}
+/* Texto de descripción debajo del logo de MARPU */
+.footer p {
+    color: #d1d5db; /* <--- CAMBIADO A GRIS CLARO */
+}
+
+/* Animación de los enlaces rápidos (se mueven a la derecha) */
+.footer-links a {
+    transition: var(--transition);
+    display: inline-block;
+    font-weight: 500;
+}
+
+.footer-links a:hover {
+    color: var(--c-magenta);
+    transform: translateX(5px);
+}
+
+/* Íconos de contacto dentro de burbujas */
+.footer-links i {
+    color: var(--c-cyan) !important;
+    background-color: var(--bg-body);
+    width: 32px !important;
+    height: 32px !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 12px !important;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    padding: 6px;
+    transition: var(--transition);
+}
+
+/* Color distinto para el segundo ícono (Ubicación) */
+.footer-links li:nth-child(2) i {
+    color: var(--c-magenta) !important;
+}
+
+/* Efecto al pasar el ratón por los datos de contacto */
+.footer-links li:hover i {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-md);
+}
+
 .footer-bottom {
     border-top: 1px solid var(--border-color);
     padding-top: 2rem;
     text-align: center;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--text-muted);
+    font-weight: 500;
 }
 
 .fab-whatsapp {
@@ -470,6 +597,10 @@ button { cursor: pointer; border: none; font-family: inherit; }
     box-shadow: var(--shadow-lg);
     z-index: 100;
     transition: var(--transition);
+}
+/*-- ICONO GRANDE --*/
+.fab-whatsapp i {
+    font-size: 2rem;
 }
 .fab-whatsapp:hover { transform: scale(1.1) translateY(-5px); }
 
@@ -490,7 +621,7 @@ button { cursor: pointer; border: none; font-family: inherit; }
     .grid-footer { grid-template-columns: 1fr; }
 }
 /* ========================================= */
-/* SECCIÓN UBICACIÓN                         */
+/* SECCIÓN UBICACIÓN (DISEÑO MEJORADO)       */
 /* ========================================= */
 .location {
     background-color: var(--bg-body);
@@ -502,64 +633,210 @@ button { cursor: pointer; border: none; font-family: inherit; }
     gap: 3rem;
     align-items: center;
     background: white;
-    padding: 2.5rem;
+    padding: 3rem; /* Le dimos un poco más de espacio interior */
     border-radius: 24px;
     box-shadow: var(--shadow-lg);
     border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden; /* Necesario para que la línea de color superior no se salga */
+}
+
+/* Adorno visual: Línea superior con gradiente CMY */
+.grid-location::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(to right, var(--c-cyan), var(--c-magenta), var(--c-yellow));
 }
 
 .location-info h3 {
-    font-size: 1.5rem;
+    font-size: 2rem; /* Título más grande y llamativo */
     color: var(--c-black);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 900;
 }
 
 .location-info p {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 1rem;
-    color: var(--text-muted);
-    font-size: 1rem;
+    gap: 16px;
+    margin-bottom: 1.5rem;
+    color: var(--text-main);
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
-.location-info i {
+/* Estilo de "Burbuja" para los iconos */
+.location-info p i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: var(--bg-body); /* Contraste perfecto en modo claro y oscuro */
     color: var(--c-cyan);
-    min-width: 20px; /* Evita que el ícono se aplaste si el texto es largo */
+    border-radius: 50%;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
 }
 
+/* Efecto Hover: Al pasar el ratón se rellena de color y crece un poquito */
+.location-info p:hover i {
+    background-color: var(--c-cyan);
+    color: white;
+    transform: scale(1.1);
+    border-color: var(--c-cyan);
+}
+
+/* Forzamos al segundo ícono (Horario) a usar el color Magenta para más variedad */
+.location-info p:nth-of-type(2) i {
+    color: var(--c-magenta);
+}
+.location-info p:nth-of-type(2):hover i {
+    background-color: var(--c-magenta);
+    color: white;
+    border-color: var(--c-magenta);
+}
+
+/* Mejoramos el marco del mapa */
 .location-map iframe {
     border-radius: 16px;
     width: 100%;
-    background-color: var(--bg-section); /* Color de fondo mientras carga */
+    min-height: 350px; /* Un poco más alto para que cuadre mejor con el texto */
+    background-color: var(--bg-section);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
 }
 
-/* Hacer que la ubicación se vea bien en celulares */
+/* Ajuste para que se vea bien en celulares */
 @media (max-width: 768px) {
     .grid-location {
         grid-template-columns: 1fr;
         padding: 1.5rem;
+        padding-top: 2rem; /* Espacio para que respire la línea de color superior */
     }
 }
+
+/* ========================================= */
+/* HERO CON CARRUSEL DE FONDO                */
+/* ========================================= */
+.hero {
+    padding: 180px 0 120px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--c-black-light);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+.hero-title, .hero-badge { color: #ffffff; }
+.hero-description, .feature-item { color: #d1d5db; }
+
+
+/* Ajuste al botón "Cotizar Ahora" sobre el fondo oscuro del carrusel */
+.hero-content .btn-black {
+    background-color: transparent;
+    color: #ffffff;
+    border-color: var(--c-cyan);
+}
+
+.hero-content .btn-black:hover {
+    background-color: var(--c-cyan);
+    color: var(--c-black);
+    border-color: var(--c-cyan);
+}
+
+.hero-content .btn-black:hover i[data-lucide="calculator"] {
+    color: var(--c-black) !important;
+}
+
+/* Ajuste al botón "Ver Productos" para que resalte en el fondo oscuro */
+.hero-content .btn-outline {
+    background-color: transparent;
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+.hero-content .btn-outline:hover {
+    background-color: #ffffff;
+    color: var(--c-black);
+    border-color: #ffffff;
+}
+
+/* ========================================= */
+/* ESTILOS DEL CARRUSEL DE FONDO             */
+/* ========================================= */
+.hero-carousel-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(17, 24, 39, 0.85);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    height: 100%;
+    align-items: center;
+    animation: scroll-carousel-bg 30s linear infinite;
+}
+
+.carousel-track img {
+    width: 450px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 16px;
+    opacity: 0.5;
+}
+
+@keyframes scroll-carousel-bg {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 1rem)); }
+}
+
+@media (max-width: 768px) {
+    .carousel-track img {
+        width: 250px;
+        height: 200px;
+    }
+}
+
 /* ========================================= */
 /* MODO OSCURO (Automático según el sistema) */
 /* ========================================= */
 @media (prefers-color-scheme: dark) {
     :root {
-        /* Cambiamos los fondos a oscuros y los textos a claros */
-        --bg-body: #111827; /* Fondo principal oscuro */
-        --bg-section: #1f2937; /* Fondo secundario un poco más claro */
-        --text-main: #f9fafb; /* Texto blanco principal */
-        --text-muted: #9ca3af; /* Texto gris claro */
-        --border-color: #374151; /* Bordes oscuros */
+        --bg-body: #111827;
+        --bg-section: #1f2937;
+        --text-main: #f9fafb;
+        --text-muted: #9ca3af;
+        --border-color: #374151;
     }
 
-    /* 1. Ajuste de la cabecera semi-transparente */
     .header {
         background-color: rgba(17, 24, 39, 0.95);
     }
 
-    /* 2. Forzar que los textos que usaban negro fijo ahora sean blancos */
     .section-title,
     .logo-text h1,
     .hero-title,
@@ -569,7 +846,6 @@ button { cursor: pointer; border: none; font-family: inherit; }
         color: var(--text-main);
     }
 
-    /* 3. Ajuste de tarjetas, footer y contenedor móvil */
     .card-product,
     .calc-form,
     .footer,
@@ -577,67 +853,69 @@ button { cursor: pointer; border: none; font-family: inherit; }
         background-color: var(--bg-section);
     }
 
-    /* 4. Ajuste del formulario del cotizador */
     .form-group select {
         background-color: var(--bg-body);
         color: var(--text-main);
     }
 
-    /* 5. Ajuste de los botones para que no deslumbren en fondo oscuro */
     .btn-black,
-    .btn-outline {
+    .btn-outline,
+    .hero-content .btn-outline {
         background-color: transparent;
-        color: var(--text-main);
+        color: #ffffff;
+        border-color: rgba(255, 255, 255, 0.4);
     }
-    /* ========================================= */
-    /* NUEVOS ESTILOS PARA TARJETAS Y FOOTER     */
-    /* (Añadir dentro del @media oscuro)         */
-    /* ========================================= */
+
+    .btn-black i[data-lucide="calculator"] {
+        color: var(--c-cyan) !important;
+    }
+
+    .btn-black:hover,
+    .btn-outline:hover,
+    .hero-content .btn-outline:hover {
+        background-color: #ffffff;
+        color: var(--c-black);
+        border-color: #ffffff;
+    }
+
+    .btn-black:hover i[data-lucide="calculator"] {
+        color: var(--c-black) !important;
+    }
 
     /* 1. Marcos de colores alternos para los productos */
-    .card-product:nth-child(3n+1) {
-        border: 2px solid var(--c-cyan);
-    }
-    .card-product:nth-child(3n+2) {
-        border: 2px solid var(--c-magenta);
-    }
-    .card-product:nth-child(3n+3) {
-        border: 2px solid var(--c-yellow);
-    }
-
-    /* Si tienes una 4ta tarjeta, seguirá el color de la primera (Cian) y así sucesivamente */
+    .card-product:nth-child(3n+1) { border: 2px solid var(--c-cyan); }
+    .card-product:nth-child(3n+2) { border: 2px solid var(--c-magenta); }
+    .card-product:nth-child(3n+3) { border: 2px solid var(--c-yellow); }
 
     /* 2. Footer estilizado con borde degradado */
     .footer {
-        background-color: #0f172a; /* Un tono un poquito más oscuro para que resalte del fondo general */
-        border-top: 3px solid transparent; /* Prepara el borde */
-        border-image: linear-gradient(to right, var(--c-cyan), var(--c-magenta), var(--c-yellow)) 1; /* Aplica el gradiente */
+        background-color: #0f172a;
+        border-top: 3px solid transparent;
+        border-image: linear-gradient(to right, var(--c-cyan), var(--c-magenta), var(--c-yellow)) 1;
     }
 
-    /* Opcional: Hacer que el título del logo en el footer mantenga el color de la marca */
     .footer .logo-container h2 {
         background: linear-gradient(to right, var(--c-cyan), var(--c-magenta), var(--c-yellow));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
-    /* 3. Ajuste de tarjetas, footer y contenedor móvil (MODIFICADO) */
+
+    /* 3. Ajuste de tarjetas, footer y contenedor móvil */
     .card-product,
     .calc-form,
     .footer,
     .nav-mobile-container,
-    .grid-location {  /* <--- AÑADIDO AQUÍ */
+    .grid-location {
         background-color: var(--bg-section);
     }
 
-    /* Ajuste de títulos para que sean blancos (MODIFICADO) */
     .section-title,
     .logo-text h1,
     .hero-title,
     .card-title,
     .footer-title,
     .btn-mobile-menu,
-    .location-info h3 { /* <--- AÑADIDO AQUÍ */
+    .location-info h3 {
         color: var(--text-main);
     }
-
 }
