@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="Style.css">
     <!-- Carga de íconos (Lucide) -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Carga de íconos de Marcas (FontAwesome para WhatsApp) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 </head>
 <body>
@@ -37,13 +39,13 @@
             <a href="#ubicacion" class="nav-link">Ubicación</a>
         </nav>
 
-        <!-- Botón CTA de Escritorio -->
-        <button class="btn btn-black btn-desktop" onclick="enviarWhatsAppGeneral()">
-            <i data-lucide="phone" style="color: var(--c-yellow); width: 18px;"></i>
-            Contáctanos
+        <!-- ÚNICO Botón CTA de Escritorio (Verde de WhatsApp) -->
+        <button class="btn btn-whatsapp btn-desktop" onclick="enviarWhatsAppGeneral()">
+            <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem; color: #ffffff;"></i>
+            Escríbenos
         </button>
 
-        <!-- Botón Menú Móvil -->
+        <!-- Botón Menú Móvil (Hamburguesa) -->
         <button class="btn-mobile-menu" id="mobile-menu-btn">
             <i data-lucide="menu"></i>
         </button>
@@ -66,7 +68,27 @@
 <main>
     <!-- Sección Hero (Inicio) -->
     <section id="inicio" class="hero">
-        <div class="container">
+
+        <!-- 1. EL CARRUSEL DE FONDO -->
+        <div class="hero-carousel-bg">
+            <div class="carousel-overlay"></div> <!-- Esta es la capa oscura para que el texto se lea -->
+            <div class="carousel-track">
+                <!-- Primera tanda de imágenes -->
+                <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=600&h=400" alt="Muestra 1">
+                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=600&h=400" alt="Muestra 2">
+                <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=600&h=400" alt="Muestra 3">
+                <img src="https://entornografico.es/wp-content/uploads/2020/12/plantillas-de-folletos-cinco.jpg" alt="Muestra 4">
+
+                <!-- Segunda tanda de imágenes (DUPLICADAS) -->
+                <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=600&h=400" alt="Muestra 1">
+                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=600&h=400" alt="Muestra 2">
+                <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=600&h=400" alt="Muestra 3">
+                <img src="https://entornografico.es/wp-content/uploads/2020/12/plantillas-de-folletos-cinco.jpg" alt="Muestra 4">
+            </div>
+        </div>
+
+        <!-- 2. EL CONTENIDO TEXTUAL (ENCIMA) -->
+        <div class="container hero-content">
             <span class="hero-badge">Imprenta Gráfica Integral</span>
 
             <h2 class="hero-title">
@@ -227,7 +249,7 @@
                     </form>
                 </div>
                     <button type="button" class="btn btn-whatsapp" style="width: 100%; font-size: 1.1rem; padding: 16px;" onclick="enviarCotizacionCalculada()">
-                        <i data-lucide="send"></i> Enviar pedido al WhatsApp
+                    <i class="fa-brands fa-whatsapp" style="font-size: 1.5rem;"></i> Enviar pedido al WhatsApp
                     </button>
                 </div>
             </div>
@@ -298,9 +320,9 @@
 
 <!-- Botón Flotante -->
 <button class="fab-whatsapp" onclick="enviarWhatsAppGeneral()" aria-label="WhatsApp">
-    <i data-lucide="phone"></i>
+    <i class="fa-brands fa-whatsapp"></i>
 </button>
-<script src="Script.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
