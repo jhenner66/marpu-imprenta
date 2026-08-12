@@ -133,13 +133,11 @@ function enviarCotizacionCalculada() {
 
     const producto = datosCotizador.productos[idProducto];
     const acabado = datosCotizador.acabados[idAcabado];
-    const totalVisible = displayTotal.textContent;
 
     const mensaje = `¡Hola MARPU! He cotizado en su web y tengo el siguiente pedido:\n\n`+
         `*Tipo de Trabajo:* ${producto.nombre}\n`+
         `*Calidad requerida:* ${acabado.nombre}\n`+
         `*Cantidad:* ${cantidadTexto}\n`+
-        `*Presupuesto aproximado:* S/ ${totalVisible}\n\n`+
         `¿Me pueden confirmar el costo final y cómo envío mi diseño?`;
 
     abrirWhatsApp(mensaje);
