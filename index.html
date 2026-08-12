@@ -3,326 +3,338 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MARPU | Imprenta Gráfica</title>
-    <link rel="stylesheet" href="Style.css">
-    <!-- Carga de íconos (Lucide) -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Carga de íconos de Marcas (FontAwesome para WhatsApp) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>MARPU | Imprenta Gráfica para Empresas y Público General</title>
 
+    <!-- Fuentes Premium de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Íconos -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="Style.css">
 </head>
 <body>
 
-<!-- ========================================== -->
-<!-- INICIO DEL HTML SEMÁNTICO Y LIMPIO         -->
-<!-- ========================================== -->
-
-<!-- Cabecera -->
-<header class="header">
+<header class="header" id="header">
     <div class="container header-content">
         <!-- Logo -->
         <a href="#inicio" class="logo-container">
-            <div class="logo-dots">
-                <img src="images/LOGO.png" alt="logo">
-            </div>
+            <!-- Aquí va tu imagen con la nueva clase -->
+            <img src="images/LOGO.png" alt="Logo MARPU" class="logo-img">
+
             <div class="logo-text">
                 <h1>MARPU</h1>
-                <p>Imprenta Gráfica</p>
+                <p>Agencia de Impresión</p>
             </div>
         </a>
 
-        <!-- Navegación de Escritorio -->
-        <nav class="nav-desktop">
+        <nav class="nav-desktop reveal reveal-delay-1">
             <a href="#inicio" class="nav-link active">Inicio</a>
+            <a href="#proceso" class="nav-link">Proceso</a>
             <a href="#catalogo" class="nav-link">Catálogo</a>
-            <a href="#cotizar" class="nav-link">Cotizar</a>
-            <a href="#ubicacion" class="nav-link">Ubicación</a>
+            <a href="#cotizar" class="nav-link">Cotizar Online</a>
         </nav>
 
-        <!-- ÚNICO Botón CTA de Escritorio (Verde de WhatsApp) -->
-        <button class="btn btn-whatsapp btn-desktop" onclick="enviarWhatsAppGeneral()">
-            <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem; color: #ffffff;"></i>
-            Escríbenos
+        <button class="btn btn-whatsapp btn-desktop reveal reveal-delay-2" onclick="enviarWhatsAppGeneral()">
+            <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i> Escríbenos
         </button>
 
-        <!-- Botón Menú Móvil (Hamburguesa) -->
         <button class="btn-mobile-menu" id="mobile-menu-btn">
-            <i data-lucide="menu"></i>
+            <i class="fa-solid fa-bars"></i>
         </button>
     </div>
 
-    <!-- Navegación Móvil (Desplegable) -->
+    <!-- Menú Móvil -->
     <div class="nav-mobile-container" id="mobile-menu">
         <nav class="nav-mobile">
             <a href="#inicio" class="nav-link mobile-link">Inicio</a>
+            <a href="#proceso" class="nav-link mobile-link">Proceso</a>
             <a href="#catalogo" class="nav-link mobile-link">Catálogo</a>
-            <a href="#cotizar" class="nav-link mobile-link">Cotizar</a>
-            <a href="#ubicacion" class="nav-link mobile-link">Ubicación</a>
-            <button class="btn btn-whatsapp" onclick="enviarWhatsAppGeneral()">
-                <i data-lucide="phone" style="width: 18px;"></i> Escríbenos
-            </button>
+            <a href="#cotizar" class="nav-link mobile-link">Cotizar Online</a>
         </nav>
     </div>
 </header>
 
 <main>
-    <!-- Sección Hero (Inicio) -->
+    <!-- HERO INCLUSIVO -->
     <section id="inicio" class="hero">
-
-        <!-- 1. EL CARRUSEL DE FONDO -->
         <div class="hero-carousel-bg">
-            <div class="carousel-overlay"></div> <!-- Esta es la capa oscura para que el texto se lea -->
             <div class="carousel-track">
-                <!-- Primera tanda de imágenes -->
-                <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=600&h=400" alt="Muestra 1">
-                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=600&h=400" alt="Muestra 2">
-                <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=600&h=400" alt="Muestra 3">
-                <img src="https://entornografico.es/wp-content/uploads/2020/12/plantillas-de-folletos-cinco.jpg" alt="Muestra 4">
-
-                <!-- Segunda tanda de imágenes (DUPLICADAS) -->
-                <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=600&h=400" alt="Muestra 1">
-                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=600&h=400" alt="Muestra 2">
-                <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=600&h=400" alt="Muestra 3">
-                <img src="https://entornografico.es/wp-content/uploads/2020/12/plantillas-de-folletos-cinco.jpg" alt="Muestra 4">
+                <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=600&h=400" alt="Muestra">
+                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=600&h=400" alt="Muestra">
+                <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=600&h=400" alt="Muestra">
+                <img src="https://images.unsplash.com/photo-1606836591695-4d58a73eba1e?auto=format&fit=crop&q=80&w=600&h=400" alt="Muestra">
             </div>
         </div>
 
-        <!-- 2. EL CONTENIDO TEXTUAL (ENCIMA) -->
         <div class="container hero-content">
-            <span class="hero-badge">Imprenta Gráfica Integral</span>
-
-            <h2 class="hero-title">
-                Imprimimos tus ideas con <br/>
-                <span class="text-gradient">calidad y rapidez</span>
+            <span class="hero-badge reveal">Para Empresas y Proyectos Personales</span>
+            <h2 class="hero-title reveal reveal-delay-1">
+                Da vida a tus ideas con <br/>
+                <span class="text-gradient">impresiones impecables</span>
             </h2>
-
-            <p class="hero-description">
-                Especialistas en gigantografías, offset, impresión digital y merchandising.
-                Soluciones gráficas para hacer crecer tu negocio al mejor precio del mercado.
+            <p class="hero-description reveal reveal-delay-2">
+                Desde papelería corporativa y publicidad para tu negocio, hasta stickers, tazas e invitaciones para tus eventos y fechas especiales. Calidad profesional al alcance de todos.
             </p>
-
-            <div class="hero-buttons">
-                <a href="#cotizar" class="btn btn-black">
-                    <i data-lucide="calculator" style="color: var(--c-cyan); width: 18px;"></i>
-                    Cotizar Ahora
+            <div class="hero-buttons reveal reveal-delay-3">
+                <a href="#cotizar" class="btn btn-whatsapp" style="padding: 16px 32px;">
+                    <i data-lucide="calculator" style="width: 20px;"></i> Cotizar Pedido
                 </a>
-                <a href="#catalogo" class="btn btn-outline">
-                    Ver Productos
+                <a href="#catalogo" class="btn btn-outline" style="color: white; border-color: rgba(255,255,255,0.3);">
+                    Explorar Catálogo
                 </a>
             </div>
-
-            <div class="hero-features">
-                <div class="feature-item"><i data-lucide="check-circle-2" style="color: var(--c-cyan);"></i> Entregas a tiempo</div>
-                <div class="feature-item"><i data-lucide="check-circle-2" style="color: var(--c-magenta);"></i> Calidad garantizada</div>
-                <div class="feature-item"><i data-lucide="check-circle-2" style="color: var(--c-yellow);"></i> Diseños personalizados</div>
+            <div class="hero-features reveal reveal-delay-3">
+                <div class="feature-item"><i data-lucide="zap" style="color: var(--c-yellow);"></i> Desde un ciento</div>
+                <div class="feature-item"><i data-lucide="shield-check" style="color: var(--c-cyan);"></i> Calidad Profesional</div>
+                <div class="feature-item"><i data-lucide="truck" style="color: var(--c-magenta);"></i> Envíos a domicilio</div>
             </div>
         </div>
     </section>
 
-    <!-- Sección Catálogo -->
+    <!-- PROCESO DE TRABAJO -->
+    <section id="proceso" class="process section-padding">
+        <div class="container">
+            <div class="text-center reveal">
+                <h2 class="section-title">¿Cómo trabajamos?</h2>
+                <p class="section-subtitle">Un proceso sencillo y rápido, ya sea que pidas 100 stickers o 10,000 volantes.</p>
+            </div>
+            <div class="grid-process">
+                <div class="process-card reveal reveal-delay-1">
+                    <div class="process-icon"><i data-lucide="mouse-pointer-click" style="width: 32px; height: 32px;"></i></div>
+                    <h3 style="font-family: var(--font-title); margin-bottom: 10px;">1. Cotiza Online</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Usa nuestra calculadora para estimar tu presupuesto y envíanos tu diseño por WhatsApp.</p>
+                </div>
+                <div class="process-card reveal reveal-delay-2">
+                    <div class="process-icon"><i data-lucide="printer" style="width: 32px; height: 32px;"></i></div>
+                    <h3 style="font-family: var(--font-title); margin-bottom: 10px;">2. Producción</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Verificamos tus archivos y pasamos a impresión con maquinaria de alta resolución.</p>
+                </div>
+                <div class="process-card reveal reveal-delay-3">
+                    <div class="process-icon"><i data-lucide="package-check" style="width: 32px; height: 32px;"></i></div>
+                    <h3 style="font-family: var(--font-title); margin-bottom: 10px;">3. Entrega</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Recoge tu pedido en nuestro local en Chiclayo o coordinamos el envío directo a tu casa u oficina.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATÁLOGO MIXTO (B2B y B2C) -->
     <section id="catalogo" class="catalog section-padding">
         <div class="container">
-            <div class="text-center">
-                <h2 class="section-title">Nuestro Catálogo</h2>
-                <p class="section-subtitle">Descubre nuestra amplia gama de productos diseñados para destacar la imagen de tu marca.</p>
+            <div class="text-center reveal">
+                <h2 class="section-title">Soluciones Gráficas</h2>
+                <p class="section-subtitle">Productos diseñados para potenciar tu empresa o hacer único tu evento personal.</p>
             </div>
 
             <div class="grid-catalog">
-                <!-- Producto 1 -->
-                <article class="card-product">
+                <!-- Tarjeta 1: Empresas -->
+                <article class="card-product reveal reveal-delay-1">
                     <div class="card-img-container">
-                        <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=400&h=300" alt="Tarjetas de Presentación"/>
+                        <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=500&h=400" alt="Tarjetas"/>
                         <div class="card-overlay">
-                            <button class="btn" onclick="enviarWhatsAppProducto('Tarjetas de Presentación')">Consultar producto</button>
+                            <button class="btn" onclick="enviarWhatsAppProducto('Tarjetas de Presentación y Papelería')">Consultar Precios</button>
                         </div>
                     </div>
                     <div class="card-content">
-                        <div class="card-icon"><i data-lucide="layers"></i></div>
-                        <h3 class="card-title">Tarjetas de Presentación</h3>
-                        <p class="card-desc">Couche 300g, plastificado mate o brillante, impresión ambas caras.</p>
+                        <div class="card-icon"><i data-lucide="briefcase"></i></div>
+                        <h3 class="card-title">Papelería Comercial</h3>
+                        <p class="card-desc">Tarjetas de presentación, hojas membretadas y carpetas corporativas.</p>
                     </div>
                 </article>
 
-                <!-- Producto 2 -->
-                <article class="card-product">
+                <!-- Tarjeta 2: Publicidad -->
+                <article class="card-product reveal reveal-delay-2">
                     <div class="card-img-container">
-                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=400&h=300" alt="Flyers / Volantes"/>
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=500&h=400" alt="Flyers"/>
                         <div class="card-overlay">
-                            <button class="btn" onclick="enviarWhatsAppProducto('Flyers / Volantes')">Consultar producto</button>
+                            <button class="btn" onclick="enviarWhatsAppProducto('Flyers y Volantes')">Consultar Precios</button>
                         </div>
                     </div>
                     <div class="card-content">
-                        <div class="card-icon"><i data-lucide="file-text"></i></div>
-                        <h3 class="card-title">Flyers / Volantes</h3>
-                        <p class="card-desc">Papel couche 115g o 150g, full color, diferentes tamaños.</p>
+                        <div class="card-icon" style="color: var(--c-cyan)"><i data-lucide="megaphone"></i></div>
+                        <h3 class="card-title">Marketing y Publicidad</h3>
+                        <p class="card-desc">Volantes, trípticos y afiches a full color. Ideal para campañas masivas de alto impacto.</p>
                     </div>
                 </article>
 
-                <!-- Producto 3 -->
-                <article class="card-product">
+                <!-- Tarjeta 3: Eventos y Personas (NUEVO) -->
+                <article class="card-product reveal reveal-delay-3">
                     <div class="card-img-container">
-                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=400&h=300" alt="Gigantografías"/>
+                        <img src="https://images.unsplash.com/photo-1606836591695-4d58a73eba1e?auto=format&fit=crop&q=80&w=500&h=400" alt="Personalizados"/>
                         <div class="card-overlay">
-                            <button class="btn" onclick="enviarWhatsAppProducto('Gigantografías')">Consultar producto</button>
+                            <button class="btn" onclick="enviarWhatsAppProducto('Stickers, Invitaciones y Personalizados')">Consultar Precios</button>
                         </div>
                     </div>
                     <div class="card-content">
-                        <div class="card-icon"><i data-lucide="image"></i></div>
-                        <h3 class="card-title">Gigantografías</h3>
-                        <p class="card-desc">Lona de alta resistencia, impresión en alta resolución.</p>
+                        <div class="card-icon" style="color: var(--c-magenta)"><i data-lucide="gift"></i></div>
+                        <h3 class="card-title">Eventos & Personalizados</h3>
+                        <p class="card-desc">Stickers troquelados, invitaciones para bodas/cumpleaños, tazas y recuerdos únicos.</p>
                     </div>
                 </article>
 
-                <!-- Producto 4 -->
-                <article class="card-product">
+                <!-- Tarjeta 4: Gran Formato -->
+                <article class="card-product reveal reveal-delay-3">
                     <div class="card-img-container">
-                        <img src="https://entornografico.es/wp-content/uploads/2020/12/plantillas-de-folletos-cinco.jpg" alt="Folletos"/>
+                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=500&h=400" alt="Gigantografías"/>
                         <div class="card-overlay">
-                            <button class="btn" onclick="enviarWhatsAppProducto('Folletos / Dípticos')">Consultar producto</button>
+                            <button class="btn" onclick="enviarWhatsAppProducto('Gigantografías y Viniles')">Consultar Precios</button>
                         </div>
                     </div>
                     <div class="card-content">
-                        <div class="card-icon"><i data-lucide="book-open"></i></div>
-                        <h3 class="card-title">Folletos / Dípticos</h3>
-                        <p class="card-desc">Diseños plegables ideales para menús o presentaciones.</p>
+                        <div class="card-icon" style="color: var(--c-yellow)"><i data-lucide="image"></i></div>
+                        <h3 class="card-title">Gran Formato</h3>
+                        <p class="card-desc">Gigantografías, banners y viniles decorativos para locales comerciales o el hogar.</p>
                     </div>
                 </article>
             </div>
         </div>
     </section>
 
-    <section>
-    <!-- Banner CTA -->
-            <div class="pricing-banner">
-                <div>
-                    <h2>¿Estas buscando algo diferente?</h2>
-                    <p>Escríbenos directamente para un presupuesto a la medida.</p>
-                </div>
-                <button class="btn banner-btn" onclick="enviarWhatsAppGeneral('Hola, solicito el tarifario completo')">
-                    Presupuesto Especial <i data-lucide="chevron-right"></i>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección Cotizador -->
+    <!-- COTIZADOR INCLUSIVO -->
     <section id="cotizar" class="calculator section-padding">
         <div class="container">
             <div class="grid-calculator">
-
-                <!-- Formulario -->
-                <div>
-                    <h2 class="section-title" style="text-align: left;">Cotizador Rápido</h2>
-                    <p style="margin-bottom: 2rem; color: var(--text-muted);">
-                        Calcula un estimado de tu pedido al instante. Envíanos la cotización por WhatsApp para coordinar.
+                <div class="reveal">
+                    <h2 class="section-title">Calculadora de Proyecto</h2>
+                    <p style="margin-bottom: 2rem; color: #94a3b8; font-size: 1.1rem; max-width: 90%;">
+                        Obtén un presupuesto estimado en tiempo real. Ajusta las opciones a tu medida y envíanos tu solicitud con un clic. <br><br>
+                        <i class="fa-solid fa-building-columns" style="color: var(--c-cyan);"></i> Aceptamos Yape, Plin y transferencias bancarias.
                     </p>
 
+                    <!-- Formulario -->
                     <form class="calc-form">
                         <div class="form-group">
-                            <label for="form-producto">Producto a imprimir</label>
+                            <label for="form-producto">¿Qué necesitas imprimir?</label>
                             <select id="form-producto">
-                                <option value="tarjetas">Tarjetas de Presentación</option>
-                                <option value="volantes_a5">Volantes A5</option>
-                                <option value="gigantografia">Gigantografía (m2)</option>
-                                <option value="vinil">Vinil Impreso (m2)</option>
+                                <optgroup label="Para Empresas y Negocios">
+                                    <option value="tarjetas">Tarjetas de Presentación (Millar)</option>
+                                    <option value="volantes_a5">Volantes A5 (Millar)</option>
+                                </optgroup>
+                                <optgroup label="Eventos y Personales">
+                                    <option value="stickers">Stickers Personalizados (Ciento)</option>
+                                    <option value="tazas">Tazas Personalizadas (Unidad)</option>
+                                </optgroup>
+                                <optgroup label="Gran Formato">
+                                    <option value="gigantografia">Gigantografía (Por m²)</option>
+                                    <option value="vinil">Vinil Adhesivo (Por m²)</option>
+                                </optgroup>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="form-acabado">Acabado / Calidad del material</label>
+                            <label for="form-acabado">Calidad / Acabado Especial</label>
                             <select id="form-acabado">
-                                <option value="estandar">Estándar</option>
-                                <option value="premium">Premium (Mate/Brillante)</option>
-                                <option value="lujo">Lujo (Sectorizado/Troquel)</option>
+                                <option value="estandar">Básico / Estándar</option>
+                                <option value="premium">Premium (Plastificado Mate/Brillante)</option>
+                                <option value="lujo">Lujo (Acabados especiales / Troquelados)</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="form-cantidad">Cantidad (Millares / m2)</label>
+                            <label for="form-cantidad">Cantidad (Unidades, Cientos o Millares)</label>
                             <select id="form-cantidad">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="5">5</option>
-                                <option value="10">10</option>
+                                <option value="1">1 Unidad / Ciento / Millar (Mínimo)</option>
+                                <option value="2">2 Unidades / Cientos / Millares</option>
+                                <option value="5">5 Unidades / Cientos / Millares</option>
+                                <option value="10">10+ (Precio al por mayor / Descuento aplicado)</option>
                             </select>
+                        </div>
+
+                        <!-- Resumen dinámico en vivo -->
+                        <div class="calc-total">
+                            <span>Inversión Estimada:</span>
+                            <div>S/ <strong id="display-total">0.00</strong></div>
                         </div>
                     </form>
                 </div>
-                    <button type="button" class="btn btn-whatsapp" style="width: 100%; font-size: 1.1rem; padding: 16px;" onclick="enviarCotizacionCalculada()">
-                    <i class="fa-brands fa-whatsapp" style="font-size: 1.5rem;"></i> Enviar pedido al WhatsApp
+
+                <div class="reveal reveal-delay-2" style="text-align: center;">
+                    <img src="https://images.unsplash.com/photo-1596526131083-e8c633c948d2?auto=format&fit=crop&q=80&w=400&h=400" style="border-radius: 50%; width: 250px; height: 250px; object-fit: cover; border: 4px solid var(--c-cyan); box-shadow: 0 0 40px rgba(0, 210, 255, 0.2); margin-bottom: 2rem;" alt="Soporte WhatsApp">
+                    <h3 style="color: white; font-family: var(--font-title); margin-bottom: 1rem; font-size: 1.5rem;">¿Listo para imprimir?</h3>
+                    <button type="button" class="btn btn-whatsapp" style="width: 100%; font-size: 1.15rem; padding: 18px; border-radius: 12px;" onclick="enviarCotizacionCalculada()">
+                        <i class="fa-brands fa-whatsapp" style="font-size: 1.5rem;"></i> Enviar Pedido por WhatsApp
                     </button>
+                    <p style="color: #64748b; margin-top: 1rem; font-size: 0.85rem;">* Aceptamos diseños en Canva, PDF, JPG o Illustrator.</p>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Sección Ubicación -->
+
+    <!-- UBICACIÓN -->
     <section id="ubicacion" class="location section-padding">
         <div class="container">
-            <div class="text-center">
-                <h2 class="section-title">Encuéntranos</h2>
-                <p class="section-subtitle">Visítanos en nuestro local para ver muestras físicas de nuestros materiales y acabados.</p>
-            </div>
-
-            <div class="grid-location">
-                <!-- Datos de contacto -->
+            <div class="grid-location reveal">
                 <div class="location-info">
-                    <h3>Imprenta MARPU</h3>
-                    <p><i data-lucide="map-pin"></i> Juan Cuglievan 981</p>
-                    <p><i data-lucide="clock"></i> Lunes a Sábado: 9:00 AM - 7:00 PM</p>
+                    <span style="color: var(--c-magenta); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;">Nuestra Sede</span>
+                    <h3>Visita nuestra imprenta</h3>
+                    <p><i data-lucide="map-pin"></i> Juan Cuglievan 981, Chiclayo</p>
+                    <p><i data-lucide="clock" style="color: var(--c-magenta);"></i> Lun - Sáb: 9:00 AM a 7:00 PM</p>
+                    <a href="https://maps.app.goo.gl/khrFdEtJqk8J55XZA" target="_blank" class="btn btn-outline" style="margin-top: 1rem;">Abrir en Google Maps</a>
                 </div>
-
-                <!-- Mapa de Google (Puedes reemplazar el src con el de tu negocio real) -->
                 <div class="location-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d990.5000666472308!2d-79.84102783044823!3d-6.769805467822084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x904ceed78cdead05%3A0x94a83b3041710684!2sJuan%20Cuglievan%20983%2C%20Chiclayo%2014001!5e0!3m2!1ses!2spe!4v1786298592721!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d990.5000666472308!2d-79.84102783044823!3d-6.769805467822084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x904ceed78cdead05%3A0x94a83b3041710684!2sJuan%20Cuglievan%20983%2C%20Chiclayo%2014001!5e0!3m2!1ses!2spe!4v1786298592721!5m2!1ses!2spe" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
     </section>
 </main>
 
-<!-- Footer -->
 <footer class="footer">
     <div class="container">
-        <div class="grid-footer">
+        <div class="grid-footer reveal">
             <div>
-                <div class="logo-container" style="margin-bottom: 1rem;">
-                    <h2 style="font-weight: 900; color: var(--c-black);">MARPU</h2>
-                </div>
-                <p style="color: var(--text-muted); max-width: 300px;">
-                    Tu aliado estratégico en impresiones. Garantizamos la mejor calidad en el menor tiempo.
+                <h2 style="font-family: var(--font-title); font-weight: 900; font-size: 2.5rem; background: linear-gradient(to right, var(--c-cyan), var(--c-magenta), var(--c-yellow)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem; line-height: 1;">MARPU</h2>
+                <p style="color: #94a3b8; max-width: 300px;">
+                    Tu socio en comunicación visual. Imprimimos tus ideas para potenciar tu negocio o hacer inolvidables tus eventos.
                 </p>
             </div>
-
             <div>
-                <h4 class="footer-title">Enlaces Rápidos</h4>
+                <h4 class="footer-title">Navegación</h4>
                 <ul class="footer-links">
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#catalogo">Catálogo</a></li>
-                    <li><a href="#cotizar">Cotizador</a></li>
-                    <li><a href="#ubicacion">Ubicación</a></li>
+                    <li><a href="#proceso">Cómo Trabajamos</a></li>
+                    <li><a href="#catalogo">Catálogo de Productos</a></li>
+                    <li><a href="#cotizar">Calculadora Online</a></li>
                 </ul>
             </div>
-
             <div>
-                <h4 class="footer-title">Contacto</h4>
+                <h4 class="footer-title">Atención al Cliente</h4>
                 <ul class="footer-links">
-                    <li><i data-lucide="phone" style="width: 14px; margin-right: 7px;"></i> +51 972687772</li>
-                    <li><i data-lucide="map-pin" style="width: 14px; margin-right: 7px;"></i> Chiclayo, Lambayeque</li>
+                    <li><i class="fa-brands fa-whatsapp"></i> +51 972 687 772</li>
+                    <li><i class="fa-solid fa-location-dot"></i> Chiclayo, Perú</li>
+                    <li><i class="fa-solid fa-envelope"></i> ventas@marpu.com</li>
                 </ul>
             </div>
         </div>
-
-        <div class="footer-bottom">
-            <p>© <span id="current-year"></span> MARPU Imprenta. Todos los derechos reservados.</p>
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center; color: #64748b; font-size: 0.9rem;">
+            <p>© <span id="current-year"></span> Imprenta MARPU. Desarrollado con excelencia.</p>
         </div>
     </div>
 </footer>
 
-<!-- Botón Flotante -->
-<button class="fab-whatsapp" onclick="enviarWhatsAppGeneral()" aria-label="WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
+<button class="fab-ai" id="ai-chat-toggle" aria-label="Asesor Inteligente">
+    <i class="fa-solid fa-wand-magic-sparkles"></i> <span>Asesor IA</span>
 </button>
-<script src="Script.js"></script>
 
+<div class="ai-chat-modal" id="ai-chat-modal">
+    <div class="ai-chat-header">
+        <h3><i class="fa-solid fa-robot"></i> Asesor Gráfico IA</h3>
+        <button id="close-ai-chat" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="ai-chat-body" id="ai-chat-messages">
+        <div class="chat-message bot-message">
+            ¡Hola! 👋 Soy el asistente experto de MARPU. ¿En qué te ayudo hoy? <br><br>
+            Puedo recomendarte el mejor tipo de papel para tu proyecto, explicarte nuestros acabados o ayudarte a redactar textos creativos para tus volantes y tarjetas.
+        </div>
+    </div>
+    <div class="typing-indicator" id="ai-typing">El asesor está escribiendo...</div>
+    <div class="ai-chat-footer">
+        <input type="text" id="ai-chat-input" placeholder="Pregúntame sobre impresiones...">
+        <button id="ai-chat-send" aria-label="Enviar"><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+</div>
+<script src="Script.js"></script>
 </body>
 </html>
